@@ -1,8 +1,14 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+// import { NestFactory } from '@nestjs/core';
+// import { AppModule } from './app.module';
+import { bootstrap, wait } from './bootstrap';
+import 'reflect-metadata';
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+async function start() {
+  // const app = await NestFactory.create(AppModule);
+  await wait();
+  const [app, host] = await bootstrap();
+  console.log(host);
+  await app.listen(host.port, host.host);
 }
-bootstrap();
+
+start().then();
