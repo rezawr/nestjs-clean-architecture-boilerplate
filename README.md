@@ -55,6 +55,14 @@ Your application will be running at `http://localhost:{port}`.
 - **Domain-Driven Design (DDD):** A methodology for modeling complex software.
 - **Clean Architecture:** An approach to organizing project structure.
 
+## ☕ Support
+
+If you find this project helpful and would like to support its development, consider buying me a coffee:
+
+[![Donate via Trakteer](https://img.shields.io/badge/Donate-via%20Trakteer-red)](https://trakteer.id/rezawr/link)
+
+Your support is greatly appreciated!
+
 ## 🤝 Contributing
 
 We welcome contributions to this project! Here’s how you can help:
