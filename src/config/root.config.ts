@@ -7,7 +7,7 @@ import { CorsConfig } from './root/cors.config';
 export class RootConfig {
   @IsString()
   @IsIn(['app', 'migration'])
-  model!: 'app' | 'migration';
+  mode!: 'app' | 'migration';
 
   @ValidateNested()
   @Type(() => HostConfig)

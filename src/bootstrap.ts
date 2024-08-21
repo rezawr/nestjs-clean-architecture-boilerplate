@@ -10,6 +10,7 @@ import { ConfigService } from '@nestjs/config';
 import { CorsConfig } from './config/root/cors.config';
 import { HostConfig } from './config/root/host.config';
 import { MigrationModule } from './infra/migration.module';
+import { MigratorFactory } from './infra/services/migrator.factory';
 
 async function bootstrap(): Promise<[INestApplication, HostConfig]> {
   const app = await NestFactory.create(AppModule, {
@@ -66,4 +67,21 @@ async function wait() {
   await waiter.close();
 }
 
-export { bootstrap, wait };
+async function migration() {
+  const migration = await NestFactory.createApplicationContext(
+    MigrationModule,
+    {
+      bufferLogs: true,
+    },
+  );
+  await migration.init();
+
+  migration.useLogger(migration.get(Logger));
+  const factory = await migration.resolve(MigratorFactory);
+  const db = factory.createDatabase(migration, {});
+  await Promise.all([db].map((x) => x.migrate()));
+  migration.flushLogs();
+  await migration.close();
+}
+
+export { bootstrap, wait, migration };

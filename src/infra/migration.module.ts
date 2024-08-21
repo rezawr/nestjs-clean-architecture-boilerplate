@@ -3,6 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
 import loader from 'src/config/loader';
 import { LoggingConfig } from 'src/config/root/otel/logging.config';
+import { MigratorFactory } from './services/migrator.factory';
+import { dbModules } from 'src/constants';
 
 @Module({
   imports: [
@@ -44,7 +46,10 @@ import { LoggingConfig } from 'src/config/root/otel/logging.config';
         };
       },
     }),
+
+    ...dbModules,
   ],
+  providers: [MigratorFactory],
 })
 class MigrationModule {}
 

@@ -10,6 +10,10 @@ const APP_NAME = 'APP_NAME' as const;
 const ENV_PREFIX = `${APP_NAME}__` as const;
 const ENV_DELIMITER = '__' as const;
 
+function toCamelCase(str: string): string {
+  return str.replace(/_./g, (match) => match[1].toUpperCase());
+}
+
 function loadEnvironment(env: Record<string, string | undefined>): RawConfig {
   return Object.keys(env)
     .filter((key) => key.startsWith(ENV_PREFIX))
@@ -18,7 +22,10 @@ function loadEnvironment(env: Record<string, string | undefined>): RawConfig {
       const keyWithoutPrefix = k.replace(ENV_PREFIX, '');
       const key = keyWithoutPrefix
         .split(ENV_DELIMITER)
-        .map((x) => x.toLowerCase())
+        .map((x) => {
+          const res = x.toLowerCase();
+          return toCamelCase(res);
+        })
         .join('.');
 
       return { key, value };

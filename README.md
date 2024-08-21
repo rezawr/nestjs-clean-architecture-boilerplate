@@ -43,7 +43,14 @@ Follow these steps to set up the project locally:
 To start the development server:
 
 ```bash
-npm run dev
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
 ```
 
 Your application will be running at `http://localhost:{port}`.

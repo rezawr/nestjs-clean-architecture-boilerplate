@@ -22,5 +22,5 @@ export class DatabaseConfig {
   @Type(() => OrmConfig)
   orm!: OrmConfig;
 
-  driverOption?: any;
+  driverOptions?: any;
 }

@@ -6,10 +6,13 @@ import { OpenTelemetryModule } from 'nestjs-otel';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MetricsConfig } from './config/root/otel/metrics.config';
 import { MigrationModule } from './infra/migration.module';
+import { MikroOrmModule } from '@mikro-orm/nestjs';
 
 @Module({
   imports: [
     MigrationModule,
+
+    MikroOrmModule.forMiddleware(),
 
     OpenTelemetryModule.forRootAsync({
       imports: [ConfigModule],
