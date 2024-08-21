@@ -5,10 +5,11 @@ import { UsersModule } from './users/users.module';
 import { OpenTelemetryModule } from 'nestjs-otel';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MetricsConfig } from './config/root/otel/metrics.config';
+import { MigrationModule } from './infra/migration.module';
 
 @Module({
   imports: [
-    UsersModule,
+    MigrationModule,
 
     OpenTelemetryModule.forRootAsync({
       imports: [ConfigModule],
@@ -29,6 +30,8 @@ import { MetricsConfig } from './config/root/otel/metrics.config';
         };
       },
     }),
+
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

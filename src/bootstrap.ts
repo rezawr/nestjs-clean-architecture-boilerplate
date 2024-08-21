@@ -31,6 +31,8 @@ async function bootstrap(): Promise<[INestApplication, HostConfig]> {
 
   const configService = app.get(ConfigService);
   const corsConfig = configService.get<CorsConfig>('cors');
+  if (corsConfig == null) throw new Error('cors is not defined');
+
   const origins = corsConfig.origins;
   app.enableCors({
     origin: origins,
@@ -48,7 +50,6 @@ async function bootstrap(): Promise<[INestApplication, HostConfig]> {
   });
 
   const hostConfig = configService.get<HostConfig>('host')!;
-  console.log(hostConfig);
 
   return [app, hostConfig];
 }
