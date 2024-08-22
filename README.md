@@ -1,14 +1,14 @@
 
-# 🌟 DDD with Clean Architecture for Next.js
+# 🌟 DDD with Clean Architecture for Nest.js
 
-[![Next.js](https://img.shields.io/badge/Next.js-12.0.0-blue)](https://nextjs.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-v9.0.0-red)](https://nestjs.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.5.2-blue)](https://www.typescriptlang.org/)
 [![MIT License](https://img.shields.io/badge/License-MIT-green)](#license)
 [![Donate via Trakteer](https://img.shields.io/badge/Donate-via%20Trakteer-red)](https://trakteer.id/rezawr/link)
 
 ## 📚 Project Overview
 
-This project implements **Domain-Driven Design (DDD)** with **Clean Architecture** principles using **Next.js**. It serves as a template for building scalable, maintainable, and testable web applications.
+This project implements **Domain-Driven Design (DDD)** with **Clean Architecture** principles using **Nest.js**. It serves as a template for building scalable, maintainable, and testable web applications.
 
 ## 🚀 Features
 
@@ -58,7 +58,7 @@ Your application will be running at `http://localhost:{port}`.
 
 ## 🧰 Technologies Used
 
-- **[Next.js](https://nextjs.org/):** React framework for server-side rendering and static site generation.
+- **[Nest.js](https://nestjs.com/):** A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
 - **[TypeScript](https://www.typescriptlang.org/):** A superset of JavaScript that adds static types.
 - **Domain-Driven Design (DDD):** A methodology for modeling complex software.
 - **Clean Architecture:** An approach to organizing project structure.
