@@ -4,6 +4,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-12.0.0-blue)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.5.2-blue)](https://www.typescriptlang.org/)
 [![MIT License](https://img.shields.io/badge/License-MIT-green)](#license)
+[![Donate via Trakteer](https://img.shields.io/badge/Donate-via%20Trakteer-red)](https://trakteer.id/rezawr/link)
 
 ## 📚 Project Overview
 

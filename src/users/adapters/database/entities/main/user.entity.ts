@@ -10,7 +10,10 @@ export class UserEntity extends BaseEntity {
   email_verified_at: Date = new Date();
 
   @Property({ type: 'varchar', length: 150 })
-  name!: string;
+  firstName!: string;
+
+  @Property({ type: 'varchar', length: 150 })
+  lastName!: string;
 
   @Property({ type: 'text' })
   password!: string;

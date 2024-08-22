@@ -32,14 +32,33 @@ export class OrmModule {
               driverOptions,
             } = dbConfig;
 
+            // console.log(orm);
+
             return {
-              driver: MySqlDriver,
-              entities: orm.entitiesTs,
+              driver: conn.connection == 'mysql' ? MySqlDriver : null, // postgresql will be coded
               registerRequestContext: false,
               dbName: database,
               ...JSON.parse(JSON.stringify({ ...orm, ...conn })),
               driverOptions,
             };
+            // return {
+            //   driver: MySqlDriver,
+            //   // entities: orm.entitiesTs,
+            //   registerRequestContext: false,
+            //   dbName: database,
+            //   ...JSON.parse(JSON.stringify({ ...orm, ...conn })),
+            //   driverOptions,
+            //   // migrations: orm.
+            //   // migrations: {
+            //   //   tableName: contextName,
+            //   //   path: orm.migrations.path,
+            //   //   pathTs: orm.migrations.pathTs,
+            //   //   transactional: orm.migrations.transactional,
+            //   //   allOrNothing: orm.migrations.allOrNothing,
+            //   //   safe: orm.migrations.safe,
+            //   //   snapshot: orm.migrations.snapshot,
+            //   // },
+            // };
           },
           contextName,
         }),

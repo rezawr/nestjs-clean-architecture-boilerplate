@@ -10,4 +10,4 @@ const dbModules = [OrmModule.register(contexts.MAIN)] as const;
 //   [contexts.MAIN]: GtiDatabaseSeeder
 // };
 
-export { dbModules };
+export { contexts, dbModules };
